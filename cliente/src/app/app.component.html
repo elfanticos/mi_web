@@ -1,0 +1,39 @@
+
+<div class="app-container" [class.app-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="app-toolbar flex" color="primary">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="app-app-name">Jhonatan Meza I.</h1><span class="cs-spacer"></span><a mat-button *ngFor="let ruta of rutas" [routerLink]="['/'+ruta.path]">{{ruta.item}}</a>
+  </mat-toolbar>
+  <mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list><a mat-list-item [routerLink]="['/'+ruta.path]" *ngFor="let ruta of rutas">
+          <mat-icon>{{ruta.icon}}</mat-icon><span>{{ruta.item}}</span></a></mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="flex">
+        <div class="section-main">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="section-sidebar">
+          <div class="text-right">
+            <form [formGroup]="newForm">
+              <div>
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Ingresa tu busqueda" formControlName="search">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="search.setValue('')">
+                    <mat-icon>{{search.value ? 'close' : 'search'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+              <div>
+                <button mat-button color="primary" type="button" [disabled]="!newForm.valid || newForm.pristine">Buscar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
