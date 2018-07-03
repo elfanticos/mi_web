@@ -5,14 +5,7 @@ ul {
     width: 200px;
     height: 200px;
 }
-/* div.polaroid {
-  width: 80%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
+mat-card {
+  margin-right: 16px;
+  margin-bottom: 16px;
 }
-
-div.container {
-  text-align: center;
-  padding: 10px 20px;
-} */
