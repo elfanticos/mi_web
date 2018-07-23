@@ -1,0 +1,9 @@
+
+<h1 mat-dialog-title>Titulo</h1>
+<div mat-dialog-content>
+  <angular-cropper #angularCropper [cropperOptions]="config" [imageUrl]="imageUrl"></angular-cropper>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="primary">No, gracias</button>
+  <button mat-button color="primary" (click)="capturarImagen()">Aceptar</button>
+</div>

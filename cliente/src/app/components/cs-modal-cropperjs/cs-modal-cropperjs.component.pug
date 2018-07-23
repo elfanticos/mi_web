@@ -1,0 +1,6 @@
+h1(mat-dialog-title) Titulo
+div(mat-dialog-content)
+    angular-cropper(#angularCropper, [cropperOptions]="config", [imageUrl]="imageUrl")
+div(mat-dialog-actions)
+    button(mat-button (click)="onNoClick()" color="primary") No, gracias
+    button(mat-button color="primary", (click)="capturarImagen()") Aceptar

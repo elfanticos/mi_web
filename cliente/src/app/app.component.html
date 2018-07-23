@@ -4,7 +4,7 @@
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="app-app-name">Jhonatan Meza I.</h1><span class="cs-spacer"></span><a mat-button *ngFor="let ruta of rutas" [routerLink]="['/'+ruta.path]">{{ruta.item}}</a>
+    <h1 class="app-app-name">Jhonatan Meza I.</h1><span class="cs-spacer"></span><a mat-button *ngFor="let ruta of rutas" [routerLink]="['/'+ruta.path]">{{ruta.item}}</a><a mat-button (click)="openModalCropperJs()">CropperJs</a>
   </mat-toolbar>
   <mat-sidenav-container class="app-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">

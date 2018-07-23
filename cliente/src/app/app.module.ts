@@ -40,13 +40,22 @@ import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { TutorialsComponent } from './pages/tutorials/tutorials.component';
 
+/**Components */
+import { CsModalCropperJsComponent} from './components/cs-modal-cropperjs/cs-modal-cropperjs.component';
+
+// Import angular-cropperjs
+import { AngularCropperjsModule } from 'angular-cropperjs';
+
 @NgModule({
   declarations: [
+    /**Pages */
     AppComponent,
     HomeComponent,
     AboutMeComponent,
     ContactComponent,
-    TutorialsComponent
+    TutorialsComponent,
+    /**Modals */
+    CsModalCropperJsComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +89,12 @@ import { TutorialsComponent } from './pages/tutorials/tutorials.component';
     MatProgressBarModule,
     MatDialogModule,
     MatTreeModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    // Load angular-cropperjs
+    AngularCropperjsModule
+  ],
+  entryComponents: [
+    CsModalCropperJsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
