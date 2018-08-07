@@ -17,15 +17,13 @@
                 .section-main
                     router-outlet
                 .section-sidebar
-                    .text-right
+                    .text-right.margin-bottom
                         form([formGroup]="newForm")
-                            div
+                            div.margin-right
                                 mat-form-field
-                                    input(matInput, type="text", placeholder="Ingresa tu busqueda", formControlName="search")
-                                    button(mat-button, matSuffix, mat-icon-button, aria-label="Clear", type="button", (click)="search.setValue('')")
-                                        mat-icon {{search.value ? 'close' : 'search'}}
-                            div
-                                button(mat-button,color="primary", type="button", [disabled]="!newForm.valid || newForm.pristine") Buscar
+                                    input(matInput, type="text", placeholder="Ingresa tu busqueda", formControlName="search", (keyup.enter)="searchMagic();")
+                                    button(mat-button, matSuffix, mat-icon-button, aria-label="Clear", type="button", (click)="searchMagic();")
+                                        mat-icon search
                     .margin-le-ri
                         mat-card.margin-bottom 
                             mat-card-content

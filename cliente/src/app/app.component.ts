@@ -49,4 +49,8 @@ export class AppComponent implements OnDestroy {
       console.log(result);
     });
   }
+
+  searchMagic():void {
+    console.log('hola');
+  }
 }
