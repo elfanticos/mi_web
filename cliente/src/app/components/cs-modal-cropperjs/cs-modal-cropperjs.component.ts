@@ -1,7 +1,8 @@
 import {Component, Inject, ViewChild, OnInit} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 // Import AngularCropperjsComponent
-import { AngularCropperjsComponent } from 'angular-cropperjs';
+// import { AngularCropperjsComponent } from 'angular-cropperjs';
+import { CropperComponent } from 'angular-cropperjs';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { AngularCropperjsComponent } from 'angular-cropperjs';
 
 export class CsModalCropperJsComponent implements OnInit{
     // Get with @ViewChild
-    @ViewChild('angularCropper') public angularCropper: AngularCropperjsComponent;
+    @ViewChild('angularCropper') public angularCropper: CropperComponent;
     config:any = {
         movable: true,
         scalable: true,
